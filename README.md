@@ -5,7 +5,7 @@ This is a simple task tracker application that allows users to create tasks, vie
 ## Tech Stack
 
 - Backend: Django, Django REST Framework
-- Frontend: React
+- Frontend: React (Vite)
 - Database: SQLite (for development)
 
 ## Features
@@ -13,6 +13,7 @@ This is a simple task tracker application that allows users to create tasks, vie
 - Create a task
 - View all tasks
 - Update task status
+- Delete a task
 
 ## Data Model
 
@@ -22,6 +23,7 @@ Each task contains the following fields:
 - title: Title or description of the task
 - status: Current status of the task (TODO, IN_PROGRESS, DONE)
 - createdAt: Timestamp of when the task was created
+- updatedAt: Timestamp of when the task is updated
 
 Tasks start with a default status of **TODO**.
 The status field is limited to predefined values to prevent invalid task states and ensure consistent business logic.
@@ -91,3 +93,24 @@ Error Response: 400 Bad Request (cannot move directly from TODO to DONE)
 
 Success Response: 200 OK
 Error Response: 400 Bad Request (task not found)
+
+### Frontend UI
+
+#### Components
+
+- **CreateTask:** – Form to create a new task
+- **TaskList:** – Displays all tasks
+- **TaskItem:** – Displays a single task and status update buttons
+
+### Data Flow
+
+1) The frontend fetches tasks from the backend on page load.
+2) Creating a task sends a POST request to the backend.
+3) Updating task status sends a PATCH request to the backend.
+4) Deleting atask sends a DELETE request to backend
+5) After each action, the task list is refreshed to reflect the latest data.
+
+### Optional Bonus
+
+1) Task deletion support implemented
+2) Simple UI styling using Tailwind CSS
