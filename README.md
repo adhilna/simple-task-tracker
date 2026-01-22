@@ -134,3 +134,5 @@ The backend will run at <http://127.0.0.1:8000>
 cd ../frontend
 npm install
 npm run dev
+
+The frontend will run at <http://localhost:5173>
