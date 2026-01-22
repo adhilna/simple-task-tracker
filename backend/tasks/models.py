@@ -14,6 +14,7 @@ class Task(models.Model):
         default="TODO"
     )
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.title} in {self.status}"
