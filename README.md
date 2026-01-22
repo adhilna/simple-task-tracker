@@ -114,3 +114,23 @@ Error Response: 400 Bad Request (task not found)
 
 1) Task deletion support implemented
 2) Simple UI styling using Tailwind CSS
+
+## How to Run the Project Locally
+
+### Backend
+
+git clone <https://github.com/adhilna/simple-task-tracker>
+cd simple-task-tracker/backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+The backend will run at <http://127.0.0.1:8000>
+
+### Frontend (React + Vite + Tailwind CSS)
+
+cd ../frontend
+npm install
+npm run dev
